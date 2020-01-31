@@ -6,9 +6,17 @@
 
 <script>
     import StudentTable from "../components/StudentTable"
+    import axios from 'axios'
     export default {
         name: "Main",
-      components: {StudentTable}
+      components: {StudentTable},
+      mounted() {
+          axios.get("/auth/isLogin").then(res=>{
+            if(!res.data.isLogin){
+                this.$router.push("/login")
+            }
+          })
+      }
     }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <student-item v-for="student in students" :student="student"></student-item>
+      <student-item v-for="student in students" :key="student.studentId" :student="student"></student-item>
 
     </ul>
   </div>
